@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.css"/>
+    <!-- JS Imports-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDT7AKnjudIz-W1x5bG6Am48jApfc6I2jc",
+        authDomain: "test-348d8.firebaseapp.com",
+        databaseURL: "https://test-348d8.firebaseio.com",
+        projectId: "test-348d8",
+        storageBucket: "",
+        messagingSenderId: "975032823577"
+    };
+    firebase.initializeApp(config);
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/jquery.easings.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/scrolloverflow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <ul id="navigation">
+        <li data-menuanchor="startseite" class="active">
+            <a href="#startseite">
+                <i class="fas fa-home"></i>
+            </a>
+        </li>
+        <li data-menuanchor="bilder">
+            <a href="#bilder">
+                <i class="fas fa-image"></i>
+            </a>
+        </li>
+        <li data-menuanchor="adresse">
+            <a href="#adresse">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </li>
+    </ul>
+
+    <div id="fullpage">
+        <div class="section" data-anchor="startseite" data-tooltip="Start">
+            <header>
+                <h1 class="pagetitle">Friseur Rose</h1>
+            </header>
+        </div>
+
+        <div class="section" data-anchor="bilder">
+            Some Section
+        </div>
+
+        <div class="section" data-anchor="adresse">
+            Some Section
+        </div>
+    </div>
+</body>
+</html>
