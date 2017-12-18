@@ -1,12 +1,13 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
-        anchors: ['startseite', 'bilder', 'adresse'],
+        anchors: ['startseite', 'bilder', 'social', 'adresse'],
         menu: '#menu',
-        sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
         navigationPosition: 'right',
-        navigationTooltips: ['Startsteite', 'Bilder', 'Adresse'],
+        navigationTooltips: ['Startsteite', 'Bilder', 'Social', 'Adresse'],
         loopBottom: true,
         animateAnchor: true,
         showActiveTooltip: true,
+        autoScrolling: false,
+        scrollOverflowReset: true,
     });
 });

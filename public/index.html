@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
+    <!-- font-family: 'Lobster', cursive; -->
     <!-- JS Imports-->
     <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="js/instafeed.min.js"></script>
     <script>
     // Initialize Firebase
     var config = {
@@ -31,42 +34,70 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/scrolloverflow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <script type="text/javascript" src="js/instafeed.min.js"></script>
+    <script type="text/javascript">
+        var feed = new Instafeed({
+            get: 'user',
+            userId: '203868937',
+            accessToken: '203868937.139bd70.22dcc44a3d61434e8633fb83ac0b49ee',
+            clientId: '139bd70fca8d45a69adc62524ad5b5a6',
+            template: '<div class="instapic"><a href="{{link}}"><img src="{{image}}" /></a></div>'
+        });
+        feed.run();
+    </script>
 </head>
 
 <body>
     <!-- Navigation -->
-    <ul id="navigation">
-        <li data-menuanchor="startseite" class="active">
-            <a href="#startseite">
-                <i class="fas fa-home"></i>
-            </a>
-        </li>
-        <li data-menuanchor="bilder">
-            <a href="#bilder">
-                <i class="fas fa-image"></i>
-            </a>
-        </li>
-        <li data-menuanchor="adresse">
-            <a href="#adresse">
-                <i class="fas fa-map-marker-alt"></i>
-            </a>
-        </li>
-    </ul>
+    <div id="container-nav">
+        <ul id="navigation">
+            <li data-menuanchor="startseite" class="active">
+                <a href="#startseite"><i class="fas fa-home fa-2x"></i></a>
+            </li>
+            <li data-menuanchor="bilder">
+                <a href="#bilder"><i class="fas fa-image fa-2x"></i></a>
+                <!-- <div class="fp-tooltip right">Bilder</div> -->
+            </li>
+            <li data-menuanchor="adresse">
+                <a href="#adresse"><i class="fas fa-map-marker-alt fa-2x"></i></a>
+                <!-- <div class="fp-tooltip right">Adresse</div> -->
+            </li>
+        </ul>
+    </div>
 
+    <!-- Sections -->
     <div id="fullpage">
-        <div class="section" data-anchor="startseite" data-tooltip="Start">
+        <section class="section startseite fp-auto-height" data-anchor="startseite">
             <header>
-                <h1 class="pagetitle">Friseur Rose</h1>
+                <div class="container">
+                    <img src="img/rose-transp.png" />
+                    <h1 class="pagetitle">Friseur Rose</h1>
+                </div>
             </header>
-        </div>
+        </section>
 
-        <div class="section" data-anchor="bilder">
-            Some Section
-        </div>
+        <section class="section bilder fp-auto-height" data-anchor="bilder">
+            <div id="container-instafeed">
+                <div id="instafeed"></div>
+            </div>
+        </section>
 
-        <div class="section" data-anchor="adresse">
-            Some Section
-        </div>
+        <section class="section social fp-auto-height" data-anchor="social">
+                <div>
+                </div>
+            </section>
+
+        <section class="section adresse" data-anchor="adresse">
+            <div id="map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4469.804755009882!2d16.373563731697192!3d48.23046096514511!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4d2e07e4ea02de26!2sFriseur+Rose!5e0!3m2!1sde!2sat!4v1513632759143" 
+                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+                </iframe>
+            </div>
+        </section>
     </div>
 </body>
 </html>
+
+
